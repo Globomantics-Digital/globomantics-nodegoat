@@ -89,7 +89,9 @@ function UserDAO(db) {
         };
 
         usersCol.findOne({
-            userName: userName
+            userName: {
+                $eq: userName
+            }
         }, validateUserDoc);
     };
 
